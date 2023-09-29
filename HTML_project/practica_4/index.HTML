@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8"> <!--**подключение локализации-->
+    <meta name="author" content="Тринеев Павел"> <!--**имя автора-->
+    <meta name="description" content="Мир музыки"> <!--**описание сайта-->
+    <meta name="keywords" content="Мир музыки, Мир, мир, Музыка, музыка"> <!--**ключевые слова для робота-->
+    <title>"Мир музыки"</title>
+    <link rel="icon" type="image/png" href="/KR\icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="element_header">
+      <h1><img id="c" src="/KR\icon.png"> Мир музыки</h1>
+      <h5>Научись играть сейчас</h5>
+      <div class="y">
+        <nav>
+            <a href="">Доставка</a>
+            <a href="">Рассрочка и кредиты</a>
+            <a href="">Советы по подготовке</a>
+        </nav>
+      </div>
+    </header>
+    <main class="element_main">
+
+      <form action="" method="get" class="form-example">
+        <div class="form-example">
+          <label for="name">Enter your name: </label>
+          <input type="text" name="name" id="name" required />
+        </div>
+        <div class="form-example">
+          <label for="email">Enter your email: </label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <div class="form-example">
+          <label for="tel">Enter your tel: </label>
+          <input type="tel" name="tel" id="tel" required />
+        </div>
+        <div class="form-example">
+          <label for="password">Enter your password: </label>
+          <input type="password" name="password" id="password" required/>
+        </div>
+        <div class="form-example">
+          <label for="file">Enter your file: </label>
+          <input type="file" name="file" id="file" required />
+        </div>
+        <div class="form-example">
+          <label for="checkbox">Enter your checkbox: </label>
+          <input type="checkbox" name="checkbox" id="checkbox" required />
+        </div>
+        <div class="form-example">
+          <label for="radio">you are gay? </label>
+          <input type="radio" name="answer" id="radio" required />
+        </div>
+        <div class="form-example">
+          <label for="datetime-local">Enter your datetime-local: </label>
+          <input type="datetime-local" name="datetime-local" id="datetime-local" min = "2000-01-01" max = "2023-01-01" required />
+        </div>
+        <div class="form-example">
+          <fieldset>
+            <legend>choose:</legend>
+            <div>
+              <input type="checkbox" id="house" name="house" checked />
+              <label for="house">house</label>
+            </div>
+            <div>
+              <input type="checkbox" id="village" name="village" />
+              <label for="village">village</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-example">
+          <label for="username">Username: (3-16 characters)</label>
+          <input name="username" type="text" value="Sasha" pattern="\w{3,16}" required />
+        </div>
+
+        <div class="form-example">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" placeholder="e.g. Mike Shinoda" />
+        <button type="submit">Submit</button>
+        </div>
+        <div class="form-example">
+        <label for="story">Tell us your story:</label>
+        <textarea id="story" name="story" rows="5" minlength="3" maxlength="2000" placeholder="e.g. Mike Shinoda">It was a dark and stormy night...</textarea>
+        </div>
+
+        <fieldset>
+          <legend>Choose your favorite monster</legend>
+      
+          <input type="radio" id="kraken" name="monster" value="K" />
+          <label for="kraken">Kraken</label><br />
+      
+          <input type="radio" id="sasquatch" name="monster" value="S" />
+          <label for="sasquatch">Sasquatch</label><br />
+      
+          <input type="radio" id="mothman" name="monster" value="M" />
+          <label for="mothman">Mothman</label>
+        </fieldset> 
+
+        <label for="pet-select">Choose a pet:</label>
+
+        <select name="pets" id="pet-select" required >
+          <option value="">--Please choose an option--</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="hamster">Hamster</option>
+          <option value="parrot">Parrot</option>
+          <option value="spider">Spider</option>
+          <option value="goldfish">Goldfish</option>
+        </select>
+        
+        <label for="pet-select">Choose a pet:</label>
+
+        <select id="pet-select">
+          <option value="">--Please choose an option--</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="hamster">Hamster</option>
+          <option value="parrot">Parrot</option>
+          <option value="spider">Spider</option>
+          <option value="goldfish">Goldfish</option>
+        </select>
+
+        <div class="form-example">
+          <iframe
+          id="inlineFrameExample"
+          title="Inline Frame Example"
+          width="300"
+          height="200"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"
+          >
+        </iframe></div>
+        <div class="form-example">
+          <iframeid
+          title="Inline Frame Example"
+          width="300"
+          height="200"><video width="480" controls poster="https://www.youtube.com/watch?v=MBe1h80ghKA"><source src="https://www.youtube.com/watch?v=MBe1h80ghKA" type="video/mp4"></video></iframe>
+        </div>
+
+        
+
+        <div class="form-example">
+          <input type="submit" value="Subscribe!" />
+        </div>
+      </form>
+      
+      <form action="/en-US/docs/Web/HTML/Attributes/placeholder" id=" placeholder">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" placeholder="e.g. Mike Shinoda" />
+        <button type="submit">Submit</button>
+      </form>
+
+      
+
+    
+     
+    </main>
+    <footer class="element_footer">
+      <a href="">пока</a>
+      <address class="aside">
+        <a  href="mailto:M.M4p@ya.ru">Хотите связаться?Напишите письмо!</a>
+        <a href="">привет</a>
+      </address>
+    </footer>
+
+  </body>
+</html>
