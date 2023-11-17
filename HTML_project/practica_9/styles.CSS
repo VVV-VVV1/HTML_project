@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #4CAF50;
+}
+
+form {
+  margin-top: 50px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  padding: 5px;
+  width: 200px;
+}
+
+input[type="submit"] {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+p {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.like {
+  text-align: center;
+  z-index: 5;
+}
+
+#like_button {
+  font-size: 25px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 100px;
+  width: 100px;
+}
+
+#like_button:hover {
+  cursor: pointer;
+}
+
+.love {
+  margin-top: -75px;
+  height: 1000px;
+  z-index: 1;
+}
+
+.love span {
+  background-image: url("heart.png");
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  background-size: cover;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
