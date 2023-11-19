@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link rel="stylesheet" href="\practica_10\scripts.JS">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Styles of texts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            background-color:#FFE4B5;
+        }
+        li{
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body onload="generate()">
+
+
+
+
+
+<div class="login-form">
+    <div class="form-title">
+        Регистрация
+    </div>
+    <div class="form-input">
+        <label for="username">Логин</label>
+        <input type="text" id="username">
+    </div>
+    <div class="form-input">
+        <label for="password">Пароль</label>
+        <input type="password" id="password">
+    </div>
+    <div class="captcha">
+        <label for="captcha-input">Введите капчу</label>
+        <div id="image" class="inline" selectable="False">
+        </div>
+        <div id="user-input" class="inline">
+            <input type="text" id="submit"
+                   placeholder="Ввод...." />
+        </div>
+        <div class="" onclick="generate()">
+            <i class="fas fa-sync"></i>
+        </div>
+        <div id="check-c" class="check-container">
+            <input type="text" id="input_val" />
+            <p id="operation"><span id="num1">1</span> + <span id="num2">20</span></p>
+            <button id="btn1">Ввод...</button>
+        </div>
+
+
+        <input type="submit" id="btn" onclick="printmsg()" placeholder="Sub" />
+
+        <p id="key"></p>
+
+    </div>
+    <div class="form-input">
+        <button id="login-btn">Отправить</button>
+    </div>
+</div>
+
+<div class="accumulator-container">
+    <h1>Accumulator</h1>
+    <p>Starting Value: <span id="starting-value">0</span></p>
+    <p>Current Value: <span id="current-value">0</span></p>
+    <button id="read-btn">Add Number</button>
+</div>
+<script src="scripts.JS"></script>
+<script src="check.JS"></script>
+</body>
+</head>
