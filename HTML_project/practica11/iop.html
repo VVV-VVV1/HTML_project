@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Корзина товаров</title>
+    <style>
+        body{
+            background-color:rgb(185, 140, 140);
+        }
+        #cart {
+            display: none;
+        }
+
+        #itemsContainer {
+            margin-bottom: 10px;
+        }
+
+        #itemNameInput {
+            margin-right: 5px;
+        }
+
+        #itemPriceInput {
+            margin-right: 5px;
+        }
+
+        #itemQuantityInput {
+            margin-right: 5px;
+        }
+
+        #addItemBtn {
+            margin-right: 10px;
+        }
+
+        #changeItemBtn,
+        #deleteItemBtn,
+        #clearItemsBtn,
+        #filterBtn,
+        #resetBtn,
+        #sortAscBtn,
+        #sortDescBtn {
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+
+        #filterInputA,
+        #filterInputB {
+            margin-right: 5px;
+        }
+
+        #result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="cartToggleBtn" style="border: none; background: none; cursor: pointer;">
+            <img src="kisspng-basket-wicker-handle-the-beadery-box-basket-5abcb2d6e9aee5.1880548915223159909572.jpg" alt="Корзина" style="width: 30px; height: 30px;">
+        </button>
+    </div>
+
+    <div id="cart">
+        <div id="itemsContainer">
+            <label for="itemNameInput">Товар:</label>
+            <input type="text" id="itemNameInput">
+            <label for="itemPriceInput">Цена:</label>
+            <input type="number" id="itemPriceInput">
+            <label for="itemQuantityInput">Количество:</label>
+            <input type="number" id="itemQuantityInput">
+            <button id="addItemBtn">Добавить товар</button>
+            <label for="modItemNameInput">Количество товара:</label>
+            <input type="text" id="modItemNameInput">
+            <button id="increamentBtn">+</button>
+            <button id="decrementBtn">-</button>
+        </div>
+
+
+
+        <button id="swapItemsBtn">Изменить товар</button>
+        <button id="deleteItemBtn">Удалить товар</button>
+        <button id="clearItemsBtn">Очистить корзину</button>
+        <button id="filterBtn">Фильтровать</button>
+        <input type="number" id="filterInputA" placeholder="Мин. цена">
+        <input type="number" id="filterInputB" placeholder="Макс. цена">
+        <button id="resetBtn">Отменить фильтр</button>
+        <button id="sortAscBtn">Сортировка по возрастанию</button>
+        <button id="sortDescBtn">Сортировка по убыванию</button>
+
+        <div id="result">
+            <h3>Товары в корзине</h3>
+            <ul id="itemList"></ul>
+            <p id="totalPrice">Итоговая стоимость: 0</p>
+        </div>
+    </div>
+
+    <script>
+        var increamentBtn = document.getElementById('increamentBtn');
+        var decrementBtn = document.getElementById('decrementBtn');
+        var modItemNameInput = document.getElementById('modItemNameInput');
+        var cartToggleBtn = document.getElementById('cartToggleBtn');
+        var cart = document.getElementById('cart');
+        var itemsContainer = document.getElementById('itemsContainer');
+        var itemNameInput = document.getElementById('itemNameInput');
+        var itemPriceInput = document.getElementById('itemPriceInput');
+        var itemQuantityInput = document.getElementById('itemQuantityInput');
+        var addItemBtn = document.getElementById('addItemBtn');
+        var swapItemsBtn = document.getElementById('swapItemsBtn');
+        var deleteItemBtn = document.getElementById('deleteItemBtn');
+        var clearItemsBtn = document.getElementById('clearItemsBtn');
+        var filterBtn = document.getElementById('filterBtn');
+        var resetBtn = document.getElementById('resetBtn');
+        var sortAscBtn = document.getElementById('sortAscBtn');
+        var sortDescBtn = document.getElementById('sortDescBtn');
+        var filterInputA = document.getElementById('filterInputA');
+        var filterInputB = document.getElementById('filterInputB');
+        var itemList = document.getElementById('itemList');
+        var totalPrice = document.getElementById('totalPrice');
+
+        var items = [];
+
+        function updateItemList() {
+            itemList.innerHTML = '';
+            var total = 0;
+
+            for (var i = 0; i < items.length; i++) {
+                var item = items[i];
+
+                var li = document.createElement('li');
+                li.textContent = item.name + ' - Цена: ' + item.price + ', Количество: ' + item.quantity;
+                itemList.appendChild(li);
+
+                total += item.price * item.quantity;
+            }
+
+            totalPrice.textContent = 'Итоговая стоимость: ' + total;
+        }
+
+        function addItem() {
+            var itemName = itemNameInput.value;
+            var itemPrice = parseInt(itemPriceInput.value);
+            var itemQuantity = parseInt(itemQuantityInput.value);
+
+            var item = {
+                name: itemName,
+                price: itemPrice,
+                quantity: itemQuantity
+            };
+
+            items.push(item);
+            updateItemList();
+
+            itemNameInput.value = '';
+            itemPriceInput.value = '';
+            itemQuantityInput.value = '';
+
+            itemNameInput.focus();
+        }
+
+        function swapItems() {
+            var itemName1 = prompt('Введите название первого товара для обмена:');
+            var itemName2 = prompt('Введите название второго товара для обмена:');
+
+            var index1, index2;
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].name === itemName1) {
+                    index1 = i;
+                }
+                if (items[i].name === itemName2) {
+                    index2 = i;
+                }
+            }
+
+            if (index1 !== undefined && index2 !== undefined) {
+                var temp = items[index1];
+                items[index1] = items[index2];
+                items[index2] = temp;
+            } else {
+                alert('Не удалось найти одного или обоих товаров');
+            }
+
+            updateItemList();
+        }
+
+        function deleteItem() {
+            var itemName = prompt('Введите название товара, который нужно удалить:');
+
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].name === itemName) {
+                    items.splice(i, 1);
+                    break;
+                }
+            }
+
+            updateItemList();
+        }
+
+        function clearItems() {
+            items = [];
+            updateItemList();
+        }
+
+        function filterItems() {
+            var minPrice = parseInt(filterInputA.value);
+            var maxPrice = parseInt(filterInputB.value);
+
+            var filteredItems = items.filter(function (item) {
+                return item.price >= minPrice && item.price <= maxPrice;
+            });
+
+            itemList.innerHTML = '';
+
+            for (var i = 0; i < filteredItems.length; i++) {
+                var item = filteredItems[i];
+                var li = document.createElement('li');
+                li.textContent = item.name + ' - Цена: ' + item.price + ', Количество: ' + item.quantity;
+                itemList.appendChild(li);
+            }
+        }
+
+        function resetFilter() {
+            updateItemList();
+        }
+
+        function sortAsc() {
+            items.sort(function (a, b) {
+                return a.price - b.price;
+            });
+
+            updateItemList();
+        }
+
+        function sortDesc() {
+            items.sort(function (a, b) {
+                return b.price - a.price;
+            });
+
+            updateItemList();
+        }
+
+        cartToggleBtn.addEventListener('click', function () {
+            if (cart.style.display === 'none'){
+                cart.style.display = 'block';
+                itemsContainer.style.display = 'block';
+                updateItemList();
+            } else {
+                cart.style.display = 'none';
+                itemsContainer.style.display = 'none';
+                // Если необходимо, вы также можете обновить список элементов здесь
+            }
+        });
+        function increamentItem() {
+            var itemName = modItemNameInput.value;
+
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].name === itemName) {
+                    items[i].quantity += 1;
+                    break;
+                }
+            }
+
+            updateItemList();
+        }
+
+        function decrementItem() {
+            var itemName = modItemNameInput.value;
+
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].name === itemName && items[i].quantity > 0) {
+                    items[i].quantity -= 1;
+                    break;
+                }
+            }
+
+            updateItemList();
+        }
+
+        increamentBtn.addEventListener('click', increamentItem);
+        decrementBtn.addEventListener('click', decrementItem);
+
+        addItemBtn.addEventListener('click', addItem);
+        swapItemsBtn.addEventListener('click', swapItems);
+        deleteItemBtn.addEventListener('click', deleteItem);
+        clearItemsBtn.addEventListener('click', clearItems);
+        filterBtn.addEventListener('click', filterItems);
+        resetBtn.addEventListener('click', resetFilter);
+        sortAscBtn.addEventListener('click', sortAsc);
+        sortDescBtn.addEventListener('click', sortDesc);
+    </script>
+</body>
+</html>

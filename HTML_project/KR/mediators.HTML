@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+    <link rel="stylesheet" href="mediators\mediators.CSS">
     <link rel="stylesheet" href="styles.css">
     <meta charset="utf-8"> <!--**подключение локализации-->
     <meta name="author" content="Тринеев Павел"> <!--**имя автора-->
@@ -49,47 +50,43 @@
       <div class="img_icon"><a href="mailto:M.M4p@yandex.ru"><img width="24" height="24" src="icon\mail_icon.png" /></a></div>
       <div class="content"><a href="mailto:M.M4p@yandex.ru"><p>Написать письмо</p></a></div>
 
-
-      <div class="img_icon"><a href="registration.HTML"><img width="24 " height="24" src="icon\reg_icon.png" /></a></div>
-      <div class="content"><a href="registration.HTML"><p>Войти</p></a></div>
-
-
-      
     </div>
-  </div>
-  <div class="header_element2">
-    <div class="content2"><a href="index.HTML"><img width="240" height="50" src="icon\logo-music.png" alt="Logo"></a></div>
   </div>
   </div>
   </header>
     <main>
-      <h1>Популярные товары</h1>
-      <div class="grid_container">
-      <div class="grid_element"><a href="guitars.HTML"><div class="hover-text"><p>Акустические Гитары</p></div><div class="hover-img"><img src="products\guitar.jpg" /></a></div></div>
-      <div class="grid_element"><a href="drums.HTML"><div class="hover-text"><p>Барабанные установки</p></div><div class="hover-img"><img src="products\drums.png" /></a></div></div>
-      <div class="grid_element"><a href="synthesizers.HTML"><div class="hover-text"><p>Синтезаторы</p></div><div class="hover-img"><img src="products\synthesizer.jpg" /></a></div></div>
-      <div class="grid_element"><a href="piano.HTML"><div class="hover-text"><p>Пианино</p></div><div class="hover-img"><img src="products\pianino.jpg" /></a></div></div>
-      <div class="grid_element"><a href="electric_guitar.HTML"><div class="hover-text"><p>ЭлектроГитары</p></div><div class="hover-img"><img src="products\electric guitar.jpg" /></a></div></div>
-      <div class="grid_element"><a href="radio_systems.HTML"><div class="hover-text"><p>Радиосистемы</p></div><div class="hover-img"><img src="products\radiosystems.jpg" /></a></div></div>
-      <div class="grid_element"><a href="Combo_amplifier.HTML"><div class="hover-text"><p>Комбоусилитель</p></div><div class="hover-img"><img src="products\comboamplifier.jpg" /></a></div></div>
-      <div class="grid_element"><a href="Studio_Headphones.HTML"><div class="hover-text"><p>Студийные наушники</p></div><div class="hover-img"><img src="products\studioheadphones.jpg" /></a></div></div>
-      <div class="grid_element"><a href="mediators.HTML"><div class="hover-text"><p>Медиаторы</p></div><div class="hover-img"><img src="products\mediator.jpg" /></a></div></div>
-      <div class="grid_element"><a href="wires.HTML"><div class="hover-text"><p>Провода</p></div><div class="hover-img"><img src="products\headset.jpg" /></a></div></div>
-      </div>
 
-
-      <div class="company">
-        <p>Бренды<br>&#9660</p>
-        <hr>
-      </div>
-
-      <div class="brands_list">
-        <div class="brands_item"><a href="https://www.casio-europe.com/ru/products/musical-instruments/"><img width="275" height="100" src="brands\CASIO.png"></a></div>
-        <div class="brands_item"><a href="https://www.music-expert.ru/"><img width="300" height="100" src="brands\music-expert.png"></a></div>
-        <div class="brands_item"><a href="https://ru.wikipedia.org/wiki/Fernandes"><img width="275" height="100" src="brands\Fernandes.png"></a></div>
-        <div class="brands_item"><a href="https://fluidaudio.com/our-history/"><img width="275" height="100" src="brands\fluid_audio.png"></a></div>
-      </div>
+      <h1>Каталог товаров</h1>
+  
+  <div class="catalog">
+    <div class="product">
+      <img src="mediators\image mediators\CNT35953.jpg" alt="Набор медиаторов Dunlop 4790 Poly Display">
+      <h3>Набор медиаторов Dunlop 4790 Poly Display</h3>
+      <p>коробка с медиаторами, HV, LT, ML, XH - 72 шт, MD - 144 шт, 432 шт.</p>
+      <button onclick="addToCart('Набор медиаторов Dunlop 4790 Poly Display - 25 000 &#8381')">Добавить в корзину</button>
+    </div>
+    
+    <div class="product">
+      <img src="mediators\image mediators\CNT00984.jpg" alt="Медиаторы (набор) Dunlop 4100 Delrin 500 Display">
+      <h3>Медиаторы (набор) Dunlop 4100 Delrin 500 Display</h3>
+      <p>коробка с медиаторами, 046,071,096 - 72шт, 114,150,200 - 36шт, 324шт</p>
+      <button onclick="addToCart('Медиаторы (набор) Dunlop 4100 Delrin 500 Display - 14 000 &#8381')">Добавить в корзину</button>
+    </div>
+  </div>
+  
+  <div class="cart">
+    <h2>Корзина</h2>
+    <ul id="cartItems">
+      <!-- Пусто, так как товары в корзине будут добавляться динамически -->
+    </ul>
+    <button onclick="clearCart()">Очистить корзину</button>
+  </div>
+    <script src="script.JS"></script>
+      
     </main>
+
+
+
     <footer>
       <div class="footer_block">
 
