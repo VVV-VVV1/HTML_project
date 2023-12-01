@@ -131,12 +131,6 @@ a{
   .content{
     display: none;  
   }
-  .content2:nth-child(1){
-    display: none;  
-  }
-  .content2:nth-child(3){
-    display: none;  
-  }
   .flex_element{
     background-color: rgb(65, 64, 64);
     justify-content: space-between;
