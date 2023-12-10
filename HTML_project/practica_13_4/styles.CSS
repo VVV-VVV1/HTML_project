@@ -1,0 +1,18 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.block {
+  background-color: #f1c40f;
+  padding: 50px;
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 0.5s, opacity 0.5s;
+}

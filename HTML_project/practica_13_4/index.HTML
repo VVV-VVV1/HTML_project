@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <meta charset="utf-8"> 
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> 
+    </script> 
+  
+    <script> 
+        var x = 0; 
+        $(document).ready(function () { 
+            var prevPosition = 0; 
+            var currPosition; 
+            $('p').css('margin-bottom', '50px'); 
+            $("div").scroll(function () { 
+                currPosition = $("div").scrollTop(); 
+                if (prevPosition < currPosition) { 
+                    $("#updater").css('display', 'block'); 
+                    $("#updater").fadeOut(1000); 
+                    prevPosition = currPosition; 
+                } 
+                else if (prevPosition >= currPosition) { 
+                    $("#updater").css('display', 'None'); 
+                    prevPosition = currPosition; 
+                } 
+            }); 
+        }); 
+    </script> 
+</head> 
+  
+<body> 
+    <h1> update the scroll down event </h1> 
+    <div style="height:300px;  
+        width:100%; overflow:scroll;"> 
+          
+        <p>some data</p> 
+        <p>some data</p> 
+        <p>some data</p> 
+        <p>some data</p> 
+        <p>some data</p> 
+        <p>some data</p> 
+        <p>some data</p> 
+        <p>some data</p> 
+        <p>some data</p> 
+        <p>some data</p> 
+    </div> 
+    <h1 id="updater" style="display:none;"> 
+        scroll down detected 
+    </h1> 
+</body> 
+  
+</html> 
