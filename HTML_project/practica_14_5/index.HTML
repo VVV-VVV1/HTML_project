@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Панель управления</title>
+    <link rel="stylesheet" type="text/css" href="">
+    <meta charset="UTF-8">
+</head>
+<body>
+
+  <div id="cart" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <h2>Корзина</h2>
+    <p>Итоговая стоимость: <span id="totalPrice">0</span></p>
+  </div>
+  
+  <div id="item1" draggable="true" ondragstart="drag(event)">
+    <h3>Товар 1</h3>
+    <p>Цена: 100</p>
+    <p>Количество: 1</p>
+  </div>
+  
+  <div id="item2" draggable="true" ondragstart="drag(event)">
+    <h3>Товар 2</h3>
+    <p>Цена: 200</p>
+    <p>Количество: 1</p>
+  </div>
+  
+  <div id="item3" draggable="true" ondragstart="drag(event)">
+    <h3>Товар 3</h3>
+    <p>Цена: 300</p>
+    <p>Количество: 1</p>
+  </div>
+ 
+  <script src="\practica_14_5\script.js"></script>
+
+</body>
+</html>

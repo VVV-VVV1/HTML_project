@@ -1,0 +1,22 @@
+#slider {
+  width: 500px;
+  height: 10px;
+  background-color: #ccc;
+  position: relative;
+  cursor: pointer;
+}
+
+#slider .bar {
+  height: 100%;
+  background-color: #4CAF50;
+}
+
+#slider .handle {
+  width: 20px;
+  height: 20px;
+  background-color: #4CAF50;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
